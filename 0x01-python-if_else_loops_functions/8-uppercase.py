@@ -6,5 +6,5 @@ def uppercase(str):
             diff = 32
         else:
             diff = 0
-        print(chr(ord(i) - diff), end="")
+        print("{}".format(chr(ord(i) - diff)), end="")
     print()
