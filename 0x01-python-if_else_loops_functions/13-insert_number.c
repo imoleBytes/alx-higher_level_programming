@@ -10,8 +10,6 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	int p_data;
-	int n_data;
 	listint_t *temp = *head;
 	listint_t *new;
 
