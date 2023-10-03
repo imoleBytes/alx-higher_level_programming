@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-# YOUR CODE HERE
-# number = 7206
 
 if number < 0:
     number = -1 * number
