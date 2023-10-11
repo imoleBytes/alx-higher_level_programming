@@ -4,7 +4,7 @@
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str) or roman_string is None:
         return 0
-    # roman_string = roman_string.upper()
+    roman_string = roman_string.upper()
     roman_values = {
         "I": 1,
         "V": 5,
@@ -24,4 +24,6 @@ def roman_to_int(roman_string):
             if prev < roman_values[i]:
                 total -= prev * 2
             prev = roman_values[i]
+        else:
+            return 0
     return total
