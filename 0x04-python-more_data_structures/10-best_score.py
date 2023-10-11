@@ -2,8 +2,8 @@
 
 
 def best_score(a_dictionary):
-    if a_dictionary is None:
-        return "None"
+    if not a_dictionary:
+        return None
     list_scores = list(a_dictionary.values())
     list_keys = list(a_dictionary.keys())
     max_score = max(list_scores)
