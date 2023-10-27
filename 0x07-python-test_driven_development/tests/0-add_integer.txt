@@ -6,8 +6,7 @@ Using ``add_integer``
 
 # Import the required functions
 
-    >>> from importlib import import_module
-    >>> add_integer = import_module('0-add_integer').add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
 
 #Now use it:
     #test valid cases

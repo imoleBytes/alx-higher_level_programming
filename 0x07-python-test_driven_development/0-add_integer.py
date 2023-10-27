@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 
-"""This module is about TDD - Test Driven Development"""
+"""This module is about TDD - Test Driven Development
+functions:
+    add_integer
+"""
 
 
 def add_integer(a, b=98):
