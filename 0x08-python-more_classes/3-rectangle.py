@@ -55,11 +55,11 @@ class Rectangle:
 
     def __str__(self):
         """informal string representation of the rectangle object"""
+        if self.__width == 0 or self.__height == 0:
+            return ("")
         rect = ""
         for i in range(self.__height):
             for _ in range(self.__width):
                 rect += "#"
-                # print("#", end="")
             rect += "\n"
-            # print()
         return rect[:-1]
