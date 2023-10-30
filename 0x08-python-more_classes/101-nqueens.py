@@ -112,8 +112,9 @@ def solve_recursively(board, row, queens, solutions):
             tmp_board = board_deepcopy(board)
             tmp_board[row][c] = "Q"
             xout(tmp_board, row, c)
-            solutions = solve_recursively(tmp_board, row + 1,
-                                        queens + 1, solutions)
+            solutions = solve_recursively(
+                tmp_board, row + 1, queens + 1, solutions
+            )
 
     return (solutions)
 
