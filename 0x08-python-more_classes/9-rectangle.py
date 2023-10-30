@@ -100,4 +100,9 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """class method to create a square rectangle(size,size)
+        Args:
+            cls: class Rectangle
+            size: int
+        """
         return cls(size, size)
