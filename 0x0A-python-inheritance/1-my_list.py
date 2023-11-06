@@ -26,4 +26,3 @@ if __name__ == "__main__":
     # my_list.print_sorted()
     # no_lis.print_sorted()
     my_list.print_sorted()
-
