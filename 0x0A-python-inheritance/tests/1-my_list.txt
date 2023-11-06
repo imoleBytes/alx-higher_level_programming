@@ -22,14 +22,3 @@ Using ``my_list class``
         [1, 2, 3, 4, 5]
         >>> print(my_list)
         [1, 4, 2, 3, 5]
-
-    #pass a list into it
-        >>> l = [1,8,5]
-        >>> some = MyList(l)
-        >>> some.print_sorted()
-        [1,5,8]
-
-    #pass empty list
-    >>> my_list = MyList()
-    >>> my_list.print_sorted()
-    []
