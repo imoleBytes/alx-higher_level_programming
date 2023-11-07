@@ -4,10 +4,9 @@
 structure (list, dictionary, string, integer and boolean)
 for JSON serialization of an object
 """
-import json
 
 
 def class_to_json(obj):
     """returns the dict discription of a class object"""
-    str = json.dumps(obj.__dict__)
-    return (str)
+    str_rep = str(obj.__dict__)
+    return (str_rep)
