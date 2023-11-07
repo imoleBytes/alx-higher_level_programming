@@ -8,5 +8,5 @@ for JSON serialization of an object
 
 def class_to_json(obj):
     """returns the dict discription of a class object"""
-    str_rep = str(obj.__dict__)
-    return (str_rep)
+    dict_rep = obj.__dict__
+    return (dict_rep)
