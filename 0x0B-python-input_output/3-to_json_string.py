@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-import json
 
 """function converts to string"""
-
+import json
 
 def to_json_string(my_obj):
     """returns the string representation of an object
