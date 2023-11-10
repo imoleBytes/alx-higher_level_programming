@@ -25,62 +25,62 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-        @property
-        def width(self):
-            """width property"""
-            return self.__width
+    @property
+    def width(self):
+        """width property"""
+        return self.__width
 
-        @width.setter
-        def width(self, value):
-            """width is set and validated here"""
-            if isinstance(value, int):
-                if value <= 0:
-                    raise ValueError("width must be > 0")
-                self.__width = value
-            else:
-                raise TypeError("width must be an integer")
+    @width.setter
+    def width(self, value):
+        """width is set and validated here"""
+        if isinstance(value, int):
+            if value <= 0:
+                raise ValueError("width must be > 0")
+            self.__width = value
+        else:
+            raise TypeError("width must be an integer")
 
-        @property
-        def height(self):
-            """height property"""
-            return self.__height
+    @property
+    def height(self):
+        """height property"""
+        return self.__height
 
-        @height.setter
-        def height(self, value):
-            """height is set and validated here"""
-            if isinstance(value, int):
-                if value <= 0:
-                    raise ValueError("height must be > 0")
-                self.__height = value
-            else:
-                raise TypeError("height must be an integer")
+    @height.setter
+    def height(self, value):
+        """height is set and validated here"""
+        if isinstance(value, int):
+            if value <= 0:
+                raise ValueError("height must be > 0")
+            self.__height = value
+        else:
+            raise TypeError("height must be an integer")
 
-        @property
-        def x(self):
-            """x property"""
-            return self.__x
+    @property
+    def x(self):
+        """x property"""
+        return self.__x
 
-        @x.setter
-        def x(self, value):
-            """x is set and validated here"""
-            if isinstance(value, int):
-                if value < 0:
-                    raise ValueError("x must be >= 0")
-                self.__x = value
-            else:
-                raise TypeError("x must be an integer")
+    @x.setter
+    def x(self, value):
+        """x is set and validated here"""
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError("x must be >= 0")
+            self.__x = value
+        else:
+            raise TypeError("x must be an integer")
 
-        @property
-        def y(self):
-            """y property"""
-            return self.__y
+    @property
+    def y(self):
+        """y property"""
+        return self.__y
 
-        @y.setter
-        def y(self, value):
-            """y is set and validated here"""
-            if isinstance(value, int):
-                if value < 0:
-                    raise ValueError("y must be >= 0")
-                self.__y = value
-            else:
-                raise TypeError("y must be an integer")
+    @y.setter
+    def y(self, value):
+        """y is set and validated here"""
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError("y must be >= 0")
+            self.__y = value
+        else:
+            raise TypeError("y must be an integer")
