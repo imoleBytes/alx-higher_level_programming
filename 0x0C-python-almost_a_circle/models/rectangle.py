@@ -102,4 +102,33 @@ class Rectangle(Base):
     def __str__(self) -> str:
         """string representation of the object"""
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
-            - {self.width}/{self.height}"
+- {self.width}/{self.height}"
+
+    def update(self, *args, **kwargs):
+        """this updates the attributes of the instance"""
+        num = len(args)
+        if num > 0:
+            self.id = args[0]
+        if num > 1:
+            self.width = args[1]
+        if num > 2:
+            self.height = args[2]
+        if num > 3:
+            self.x = args[3]
+        if num > 4:
+            self.y = args[4]
+
+        for k, v in kwargs.items():
+            if k == "id":
+                if v is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = v
+            elif k == "width":
+                self.width = v
+            elif k == "height":
+                self.height = v
+            elif k == "x":
+                self.x = v
+            elif k == "y":
+                self.y = v
