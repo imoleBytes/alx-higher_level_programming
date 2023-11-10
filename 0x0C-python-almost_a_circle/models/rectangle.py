@@ -91,7 +91,15 @@ class Rectangle(Base):
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
+        for line in range(self.y):
+            print()
         for row in range(self.height):
+            print(" " * self.x, end="")
             for col in range(self.width):
                 print("#", end="")
             print()
+
+    def __str__(self) -> str:
+        """string representation of the object"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+            - {self.width}/{self.height}"
