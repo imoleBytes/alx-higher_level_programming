@@ -29,3 +29,29 @@ class Square(Rectangle):
         """size is set and validated here"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """this updates the attributes of the instance"""
+        if args:
+            num = len(args)
+            if num > 0:
+                self.id = args[0]
+            if num > 1:
+                self.size = args[1]
+            if num > 2:
+                self.x = args[2]
+            if num > 3:
+                self.y = args[3]
+        if kwargs:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
