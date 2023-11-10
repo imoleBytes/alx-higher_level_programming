@@ -33,8 +33,12 @@ class Rectangle(Base):
         @width.setter
         def width(self, value):
             """width is set and validated here"""
-            self.__width = value
-            return self.__width
+            if isinstance(value, int):
+                if value <= 0:
+                    raise ValueError("width must be > 0")
+                self.__width = value
+            else:
+                raise TypeError("width must be an integer")
 
         @property
         def height(self):
@@ -44,8 +48,12 @@ class Rectangle(Base):
         @height.setter
         def height(self, value):
             """height is set and validated here"""
-            self.__height = value
-            return self.__height
+            if isinstance(value, int):
+                if value <= 0:
+                    raise ValueError("height must be > 0")
+                self.__height = value
+            else:
+                raise TypeError("height must be an integer")
 
         @property
         def x(self):
@@ -55,8 +63,12 @@ class Rectangle(Base):
         @x.setter
         def x(self, value):
             """x is set and validated here"""
-            self.__x = value
-            return self.__x
+            if isinstance(value, int):
+                if value < 0:
+                    raise ValueError("x must be >= 0")
+                self.__x = value
+            else:
+                raise TypeError("x must be an integer")
 
         @property
         def y(self):
@@ -66,5 +78,9 @@ class Rectangle(Base):
         @y.setter
         def y(self, value):
             """y is set and validated here"""
-            self.__y = value
-            return self.__y
+            if isinstance(value, int):
+                if value < 0:
+                    raise ValueError("y must be >= 0")
+                self.__y = value
+            else:
+                raise TypeError("y must be an integer")
