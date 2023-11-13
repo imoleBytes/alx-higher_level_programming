@@ -65,3 +65,41 @@ class Base:
         else:
             list_of_dict = cls.from_json_string(list_of_dict_str)
             return [cls.create(**dic) for dic in list_of_dict]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes an obj and save to a csv file"""
+        serializable_list = [r.to_dictionary() for r in list_objs]
+        with open(f"{cls.__name__}.csv", "w", encoding="utf-8") as f:
+            for dic in serializable_list:
+                if cls.__name__ == "Rectangle":
+                    f.write(f"{dic['id']},{dic['width']},{dic['height']},{dic['x']},{dic['y']}\n")
+                elif cls.__name__ == "Square":
+                    f.write(f"{dic['id']},{dic['size']},{dic['x']},{dic['y']}\n")
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes string representation of the objects from a csv file
+        and return a list of objects
+        """
+        list_of_obj = []
+        try:
+            with open(f"{cls.__name__}.csv", "r", encoding="utf-8") as f:
+                s = f.readlines() #[:-1]     
+            for line in s:
+                line = line[:-1] #to remove the '\n' character
+                ls = line.split(",")
+                if cls.__name__ == "Rectangle":
+                    dummy = cls(int(ls[1]), int(ls[2]), x=int(ls[3]), y=int(ls[4]), id=int(ls[0]))
+                elif cls.__name__ == "Square":
+                    dummy = cls(int(ls[1]), x=int(ls[2]), y=int(ls[3]), id=int(ls[0]))
+                list_of_obj.append(dummy)
+        except FileNotFoundError:
+            print("File not found!")
+            exit()
+        return list_of_obj
+
+    def draw(list_rectangles, list_squares):
+        """draw the shapes!"""
+        pass
+    
