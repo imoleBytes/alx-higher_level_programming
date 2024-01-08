@@ -3,11 +3,9 @@
 // console.log(listofargs);
 // console.log(process.argv.length);
 
-
-
 // console.log('x'.repeat(5));
 
-let str = "Best";
+const str = 'Best';
 
 // console.log(isNaN(str));
 console.log(parseInt(str));
