@@ -5,4 +5,9 @@
 
 
 
-console.log('x'.repeat(5));
+// console.log('x'.repeat(5));
+
+let str = "Best";
+
+// console.log(isNaN(str));
+console.log(parseInt(str));
