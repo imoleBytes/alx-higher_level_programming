@@ -19,9 +19,12 @@ def main():
     results = cur.fetchall()
 
     printall(results)
+    cur.close()
+    conn.close()
 
 
 if __name__ == "__main__":
     import MySQLdb
     import sys
+
     main()
