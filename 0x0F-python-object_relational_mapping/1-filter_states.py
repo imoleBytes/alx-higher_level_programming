@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """This module contains the main function which connect to the database"""
 
 
@@ -15,8 +14,10 @@ def main():
                            passwd=sys.argv[2], db=sys.argv[3],
                            port=3306)
     cur = conn.cursor()
-    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'
-                ORDER BY states.id""")
+    cur.execute("""SELECT * FROM states
+                WHERE name LIKE 'N%'
+                ORDER BY states.id ASC"""
+                )
     results = cur.fetchall()
 
     printall(results)
