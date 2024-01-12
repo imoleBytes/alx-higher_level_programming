@@ -15,7 +15,7 @@ def main():
                            passwd=sys.argv[2], db=sys.argv[3],
                            port=3306)
     cur = conn.cursor()
-    cur.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'
+    cur.execute("""SELECT * FROM states WHERE name LIKE 'N%'
                 ORDER BY states.id""")
     results = cur.fetchall()
 
