@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
 
 """This module contains the mail function which connect to the database"""
 
@@ -24,4 +22,6 @@ def main():
 
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
     main()
