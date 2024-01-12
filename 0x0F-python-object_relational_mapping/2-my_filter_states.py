@@ -15,7 +15,7 @@ def main():
                            port=3306)
     cur = conn.cursor()
     cur.execute("""SELECT * FROM states
-                WHERE name = {}
+                WHERE name LIKE '{}'
                 ORDER BY states.id ASC""".format(sys.argv[4])
                 )
     results = cur.fetchall()
