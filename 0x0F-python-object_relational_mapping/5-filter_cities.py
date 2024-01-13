@@ -21,7 +21,8 @@ def main():
     results = cur.fetchall()
     
     for row in results:
-        print(row)
+        print(row[0], end=", ")
+    print()
     cur.close()
     conn.close()
 
