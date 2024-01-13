@@ -24,7 +24,7 @@ def main():
         for row in results[:-1]:
             print(row[0], end=", ")
         print(results[-1][0])
-    except:
+    except Exception:
         print()
     cur.close()
     conn.close()
