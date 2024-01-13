@@ -38,7 +38,7 @@ def main():
     db = connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306)
 
     cur = getCursor(db)
-    command = """SELECT * FROM states WHERE name LIKE BINARY %s
+    command = """SELECT * FROM states WHERE name LIKE %s
                     ORDER BY states.id ASC"""
     rows = execute(cur, command)
     printall(rows)
