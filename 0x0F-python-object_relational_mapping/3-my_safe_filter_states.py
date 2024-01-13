@@ -2,10 +2,6 @@
 
 """This module contains the main function which connect to the database"""
 
-import MySQLdb
-import sys
-
-
 def main():
     """Progrms statrts here!"""
     conn = MySQLdb.connect(host="localhost", user=sys.argv[1],
@@ -26,4 +22,6 @@ def printall(rows):
 
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
     main()
