@@ -18,11 +18,15 @@ def main():
                 state.id=cities.state_id WHERE state.name LIKE BINARY
                 %s ORDER BY cities.id ASC"""
     cur.execute(command, (state_name, ))
-    result = cur.fetchall()
+    results = cur.fetchall()
 
-    for row in result[:-1]:
+    for row in results[:-1]:
         print(row[0], sep=", ")
-    print(result[-1][0])
+    print(results[-1][0])
 
     cur.close()
     conn.close()
+
+
+if __name__ == "__main__":
+    main()
