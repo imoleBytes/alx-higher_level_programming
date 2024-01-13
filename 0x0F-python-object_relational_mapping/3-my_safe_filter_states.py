@@ -9,7 +9,6 @@ import sys
 # stmnt = """SELECT * FROM states WHERE name LIKE BINARY '{}'
 # ORDER BY states.id ASC"""
 
-
 def connect(host, user, passwd, database, port):
     """connect to db"""
     conn = MySQLdb.connect(host, user, passwd, database, port)
@@ -42,6 +41,8 @@ def main():
                     ORDER BY states.id ASC"""
     rows = execute(cur, command)
     printall(rows)
+    cur.close()
+    db.close()
 
 
 if __name__ == "__main__":
