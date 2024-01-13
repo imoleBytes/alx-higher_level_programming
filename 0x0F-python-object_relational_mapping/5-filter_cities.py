@@ -20,12 +20,12 @@ def main():
     cur.execute(command, (state_name, ))
     results = cur.fetchall()
 
-    for row in results[:-1]:
-        try:
+    try:
+        for row in results[:-1]:
             print(row[0], end=", ")
-            print(results[-1][0])
-        except:
-            print()
+        print(results[-1][0])
+    except:
+        print('\n')
     cur.close()
     conn.close()
 
