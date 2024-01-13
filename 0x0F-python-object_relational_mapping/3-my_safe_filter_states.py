@@ -11,7 +11,7 @@ def main():
     conn = MySQLdb.connect(host="localhost", user=sys.argv[1],
                            passwd=sys.argv[2], db=sys.argv[3])
     cur = conn.cursor()
-    cur.execute("""SELCECT * FROM states WHERE name LIKE %s
+    cur.execute("""SELCECT * FROM states WHERE name LIKE '%s'
                 ORDER BY states.id ASC""", (sys.argv[4], ))
     results = cur.fetchall()
     printall(results)
