@@ -13,7 +13,8 @@ def main():
     conn = MySQLdb.connect(host="localhost", user=user, passwd=password,
                            db=database, port=3306)
     cur = conn.cursor()
-    command = "SELECT * FROM cities ORDER BY cities.id ASC"
+    command = """SELECT cities.id, cities.name, states.name FROM cities INNER
+            JOIN states ON states.id=cities.state_id ORDER BY cities.id ASC"""
     cur.execute(command)
     results = cur.fetchall()
 
