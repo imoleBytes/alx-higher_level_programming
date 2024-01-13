@@ -15,7 +15,7 @@ def main():
                            db=database, port=3306)
     cur = conn.cursor()
     command = """SELECT cities.name FROM cities INNER JOIN states ON
-                state.id=cities.state_id WHERE state.name LIKE BINARY
+                states.id=cities.state_id WHERE states.name LIKE BINARY
                 %s ORDER BY cities.id ASC"""
     cur.execute(command, (state_name, ))
     results = cur.fetchall()
