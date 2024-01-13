@@ -23,7 +23,7 @@ def getCursor(c):
 
 def execute(cur, statement):
     """executes statements"""
-    results = cur.execute(statement, sys.argv[4]).fetchall()
+    results = cur.execute(statement, (sys.argv[4], )).fetchall()
     return results
 
 
