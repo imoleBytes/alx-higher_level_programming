@@ -25,7 +25,7 @@ def main():
             print(row[0], end=", ")
         print(results[-1][0])
     except:
-        print('\n')
+        print()
     cur.close()
     conn.close()
 
