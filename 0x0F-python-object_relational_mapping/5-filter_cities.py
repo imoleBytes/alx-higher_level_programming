@@ -19,10 +19,13 @@ def main():
                 %s ORDER BY cities.id ASC"""
     cur.execute(command, (state_name, ))
     results = cur.fetchall()
-    
-    for row in results:
-        print(row[0], end=", ")
-    print()
+
+    for row in results[:-1]:
+        try:
+            print(row[0], end=", ")
+            print(results[-1][0])
+        except:
+            print()
     cur.close()
     conn.close()
 
