@@ -23,7 +23,7 @@ def getCursor(c):
 
 def execute(cur, statement):
     """executes statements"""
-    results = cur.execute(statement)
+    results = cur.execute(statement, sys.argv[4])
     return results
 
 
@@ -34,13 +34,13 @@ def printall(rows):
 
 
 def main():
-    """mai program starts here"""
+    """main program starts here"""
     db = connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3], 3306)
 
     cur = getCursor(db)
-    command = """SELECT * FROM states WHERE name LIKE BINARY '{}'
+    command = """SELECT * FROM states WHERE name LIKE BINARY %s
                     ORDER BY states.id ASC"""
-    rows = execute(cur, command.format(sys.argv[4]))
+    rows = execute(cur, command)
     printall(rows)
 
 
