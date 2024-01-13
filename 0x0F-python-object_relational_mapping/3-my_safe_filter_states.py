@@ -6,12 +6,18 @@ import MySQLdb
 import sys
 
 
+# def main():
+#     """Progrms statrts here!"""
+#     conn = MySQLdb.connect(host="localhost", user=sys.argv[1],
+#  passwd=sys.argv[2], db=)
+
 # stmnt = """SELECT * FROM states WHERE name LIKE BINARY '{}'
 # ORDER BY states.id ASC"""
 
 def connect(host, user, passwd, database, port):
     """connect to db"""
-    conn = MySQLdb.connect(host, user, passwd, database, port)
+    conn = MySQLdb.connect(host=host, user=user, passwd=passwd,
+                           db=database, port=port)
     return conn
 
 
