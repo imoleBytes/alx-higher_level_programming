@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let argv = process.argv.slice(2);
+let argv = process.argv.slice(2).map(Number);
 const len = argv.length;
 
 if (len < 2) {
