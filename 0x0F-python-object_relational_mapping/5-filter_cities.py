@@ -22,7 +22,7 @@ if __name__ == "__main__":
                 states.name = %s""", (state_name, ))
     results = cur.fetchall()
 
-    tmp = [row[0] for row in rows]
+    tmp = [row[0] for row in results]
 
     for i in tmp[:-1]:
         print(i, sep=", ")
