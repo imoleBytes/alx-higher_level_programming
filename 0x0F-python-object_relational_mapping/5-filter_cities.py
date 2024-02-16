@@ -22,11 +22,10 @@ if __name__ == "__main__":
                 states.name = %s""", (state_name, ))
     results = cur.fetchall()
 
-    try:
-        for row in results[:-1]:
-            print(row[0], end=", ")
-        print(results[-1][0])
-    except Exception:
-        print()
+    tmp = [row[0] for row in rows]
+
+    for i in tmp[:-1]:
+        print(i, sep=", ")
+    print(i)
     cur.close()
     conn.close()

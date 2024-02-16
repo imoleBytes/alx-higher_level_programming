@@ -16,7 +16,7 @@ if __name__ == "__main__":
                            db=my_database, port=3306)
     cur = conn.cursor()
     cur.execute("""SELECT cities.id, cities.name, states.name FROM cities
-                INNER JOIN states ON states.id = cities.states_id
+                INNER JOIN states ON states.id = cities.state_id
                 ORDER BY cities.id ASC""")
     results = cur.fetchall()
 
