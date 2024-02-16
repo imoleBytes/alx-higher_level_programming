@@ -8,7 +8,7 @@ import MySQLdb
 import sys
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     my_user = sys.argv[1]
     my_password = sys.argv[2]
     my_database = sys.argv[3]
@@ -22,8 +22,11 @@ if __name__ = "__main__":
                 states.name = %s""", (state_name, ))
     results = cur.fetchall()
 
-    
-    for rec in results:
-        print(rec)
+    try:
+        for row in results[:-1]:
+            print(row[0], end=", ")
+        print(results[-1][0])
+    except Exception:
+        print()
     cur.close()
     conn.close()

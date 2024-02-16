@@ -9,7 +9,7 @@ import MySQLdb
 import sys
 
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     my_user = sys.argv[1]
     my_password = sys.argv[2]
     my_database = sys.argv[3]
@@ -18,8 +18,7 @@ if __name__ = "__main__":
     conn = MySQLdb.connect(host="localhost", user=my_user, passwd=my_password,
                            db=my_database, port=3306)
     cur = conn.cursor()
-    cur.execute("""SELECT * FROM states WHERE name
-                LIKE %s ORDER BY states.id ASC""", (state_name, ))
+    cur.execute("SELECT * FROM states WHERE name LIKE %s", (state_name, ))
     results = cur.fetchall()
 
     for rec in results:
