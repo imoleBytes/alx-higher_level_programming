@@ -19,7 +19,7 @@ if __name__ == "__main__":
     cur = conn.cursor()
     cur.execute("""SELECT cities.name FROM cities INNER JOIN
                 states ON states.id = cities.state_id WHERE
-                states.name = %s""", (state_name, ))
+                states.name=%s""", (state_name, ))
     results = cur.fetchall()
 
     tmp = list(row[0] for row in results)
