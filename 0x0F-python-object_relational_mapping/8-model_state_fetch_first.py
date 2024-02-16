@@ -22,10 +22,12 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    results = session.query(State).order_by(State.id)
+    result = session.query(State).first()
 
-    for instance in results:
-        print(instance.id, instance.name, sep=": ")
+    if result is None:
+        print("Nothing")
+    else:
+        print(result.id, result.name, sep=": ")
 
 
 if __name__ == "__main__":
