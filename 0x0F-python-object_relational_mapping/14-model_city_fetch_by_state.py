@@ -24,13 +24,9 @@ def main():
 
     session = Session()
 
-    instances = session.query(City).order_by(City.id)
-
-    for i in instances:
-        state_id = i.state_id
-        obj = session.query(State).filter(State.id == state_id).first()
-        word = f"{obj.name}: ({i.id}) {i.name}"
-        print(word)
+    for instance in (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id)):
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
 
 
 if __name__ == "__main__":
