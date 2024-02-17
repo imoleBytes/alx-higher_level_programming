@@ -25,8 +25,8 @@ def main():
 
     instances = session.query(State).filter(State.name.like('%a%'))
 
-    session.delete(instances)
-
+    for instance in instances:
+        session.delete(instance)
     session.commit()
 
 
