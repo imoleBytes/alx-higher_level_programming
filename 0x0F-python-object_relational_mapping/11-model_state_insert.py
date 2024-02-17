@@ -10,7 +10,7 @@ from model_state import Base, State
 
 
 def main():
-    """Starts here!"""
+    """Main fucntion Starts here!"""
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
@@ -24,11 +24,14 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(State.name='Louisiana')
+    new_state = State(name='Louisiana')
 
     session.add(new_state)
+    instances = session.query(State).filter(name='Louisiana')
 
-    print(new_state.id)
+    print(instances[0].id)
+
+    session.commit()
 
 
 if __name__ == "__main__":
