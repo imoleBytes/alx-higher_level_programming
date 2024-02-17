@@ -16,8 +16,7 @@ def main():
     database_name = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, database_name),
-                           pool_pre_ping=True)
+                           .format(username, password, database_name))
 
     Base.metadata.create_all(engine)
 
@@ -27,7 +26,7 @@ def main():
     new_state = State(name='Louisiana')
 
     session.add(new_state)
-    instances = session.query(State).filter(name='Louisiana')
+    instances = session.query(State).filter(State.name == 'Louisiana')
 
     print(instances[0].id)
 
