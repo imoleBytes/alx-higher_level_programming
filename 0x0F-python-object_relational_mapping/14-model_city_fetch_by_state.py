@@ -12,6 +12,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 def main():
+    """Starts here """
     username = sys.argv[1]
     password = sys.argv[2]
     db = sys.argv[3]
