@@ -10,6 +10,7 @@ from model_state import Base, State
 
 
 def main():
+    """Starts here!"""
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
