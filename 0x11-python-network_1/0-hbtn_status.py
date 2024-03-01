@@ -7,12 +7,10 @@ def main():
     """Main func starts here"""
     with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
         msg = res.read()
-    output = f"""\
-Body response:
-    - type: {type(msg)}
-    - content: {msg}
-    - utf8 content: {msg.decode()}"""
-    print(output)
+    print("Body response:")
+    print(f"\t- type: {type(msg)}")
+    print(f"\t- content: {msg}")
+    print(f"\t- utf8 content: {msg.decode()}")
 
 
 if __name__ == "__main__":
