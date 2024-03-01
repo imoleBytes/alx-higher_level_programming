@@ -9,9 +9,10 @@ def main():
     url = sys.argv[1]
 
     res = requests.get(url)
-    print(res.content.decode('utf-8'))
     if res.status_code >= 400:
         print(f"Error code: {res.status_code}")
+    else:
+        print(res.content.decode('utf-8'))
 
 
 if __name__ == "__main__":
