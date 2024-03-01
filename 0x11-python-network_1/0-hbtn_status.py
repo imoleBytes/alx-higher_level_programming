@@ -3,9 +3,9 @@
 import urllib.request
 
 
-def main(url):
+def main():
     """Main func starts here"""
-    with urllib.request.urlopen(url) as res:
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as res:
         msg = res.read()
     output = f"""\
 Body response:
@@ -16,5 +16,4 @@ Body response:
 
 
 if __name__ == "__main__":
-    url = 'https://alx-intranet.hbtn.io/status'
-    main(url)
+    main()
