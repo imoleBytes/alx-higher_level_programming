@@ -8,11 +8,9 @@ def main():
     url = "https://alx-intranet.hbtn.io/status"
     res = requests.get(url)
     msg = res.content.decode('utf-8')
-    output = f"""Body response:
-    - type: {type(msg)}
-    - content: {msg}"""
-    print(output)
-    # print(dir(res))
+    print("Body response:")
+    print(f'\t- type: {type(msg)}')
+    print(f'\t- content: {msg}')
 
 
 if __name__ == "__main__":
