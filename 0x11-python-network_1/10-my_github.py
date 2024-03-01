@@ -2,7 +2,7 @@
 """Module contains a main func that sends that authenticate
 into github and get the id of the user
 """
-# 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
+# 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 (its revoked!)
 import requests
 import sys
 
