@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module contains a main func that gets the X-Request-Id"""
+"""Module contains a main func that sends a POST request"""
 import urllib.request
 import urllib.parse
 import sys
