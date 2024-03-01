@@ -17,7 +17,7 @@ def main():
             data = res.read().decode('utf-8')
             print(data)
     except urllib.error.HTTPError as error:
-        print(f"Error code:{error.code}")
+        print(f"Error code: {error.code}")
 
 
 if __name__ == "__main__":
