@@ -1,6 +1,6 @@
 #!/usr/bin/node
 /**
- * this module writes to a file
+ * this module gets the status code of a request
  */
 const request = require('request');
 
